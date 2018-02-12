@@ -4,5 +4,19 @@
 }
 
 body{
+    font-family: 'Poppins', sans-serif;
     background-color: #bbb;
+    font-size: 1rem;
+}
+
+main{
+     background-color: navy;
+     font-size: 3rem;
+     text-align: center;
+     color: white;
+}
+
+.submit{
+    font-size: 2rem;
+    color: white;
 }
