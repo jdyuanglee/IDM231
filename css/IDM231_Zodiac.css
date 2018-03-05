@@ -9,14 +9,22 @@ body{
     font-size: 1rem;
 }
 
-main{
-     background-color: navy;
-     font-size: 3rem;
-     text-align: center;
-     color: white;
+.parent{
+    display: flex;
+    height: 100vh;
+    background-color: navy;
+    text-align: center;
 }
 
-.submit{
-    font-size: 2rem;
+.child{
+    margin: auto;
+    font-size: 3rem;
     color: white;
+}
+
+section{
+}
+
+button{
+    font-size: 2rem;
 }

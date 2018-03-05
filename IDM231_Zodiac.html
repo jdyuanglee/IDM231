@@ -9,13 +9,33 @@
     <link rel="stylesheet" href="css/IDM231_Zodiac.css">
 </head>
 <body>
-    <main><div class="welcome">Welcome</div>
-        <div class="continue"></div>
+    <main>
+        <div class="parent">
+            <div class="child">
+                <p>Welcome</p>
+                <div class="continue"></div>
+            </div>
+        </div>
     </main>
-    
-    <div class="analog">Zodiac Analog</div>
-    <div class="dob">Select your Date of Birth</div>
-    <div class="submit">SUBMIT</div>
-    <div class="backgroundinfo">What is Zodiac</div>
+        <div class="analog">Zodiac Analog</div>
+        <div class="backgroundinfo">What is Zodiac?</div>
+
+        <section>
+            <form action="index.html" method="post" id="myForm" name="myForm">
+                <div class="control">
+                    <label for="name"> NAME </label>
+                    <input type="text" id="name" name="name" placeholder="Yuang Li" required>
+                </div>
+                <div class="control">
+                    <label for="date">DOB</label>
+                    <input type="date" id="date" name="date" required>
+                    <p class="feedback" hidden>Please enter a vaild date.</p>
+                </div>
+                <div class="control">
+                    <input type="submit" value="submit">
+                </div>
+            </form>
+        </section>
+    <script src="IDM231_Zodiac.js"></script>
 </body>
 </html>
