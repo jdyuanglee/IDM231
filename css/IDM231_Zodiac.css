@@ -1,30 +1,142 @@
 *{
     margin: 0;
+    padding: 0;
     display: block;
 }
 
+img{
+    margin: auto;
+    width: 100%;
+}
+
+html{
+    font-size: 100%;
+}
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #bbb;
     font-size: 1rem;
 }
-
-.parent{
+header, main{
+    align-items: center;
     display: flex;
     height: 100vh;
     background-color: navy;
-    text-align: center;
+}
+
+form{
+    justify-content: center;
+    margin: auto;
+}
+
+.help{
+    width: 3rem;
+    align-self: flex-end;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.help:hover{
+    
+}
+
+.continue{
+    position: relative;
+    color: white;
+    font-size: 9rem;
+    transform: rotate(-90deg);
+}
+.parent{
+    margin: auto;
 }
 
 .child{
-    margin: auto;
+    margin: 11rem 0 0 0;
     font-size: 3rem;
     color: white;
 }
 
-section{
-}
-
 button{
     font-size: 2rem;
+}
+
+/* 下一个 */
+
+form{
+    margin: auto;
+
+}
+
+.formS {
+	width: 50%;
+    margin: auto;
+}
+
+h1 {
+    padding: 1rem;
+	color: white;
+	text-align: center;
+}
+
+h2 {
+    padding: 1rem 0;
+    color: white;
+    text-align: center;
+}
+
+p{
+    padding: 1rem 0;
+    color: white;
+    text-align: left;
+    width: 50%;
+    margin: auto;
+}
+
+a{
+    text-align: center;
+    text-decoration: none;
+    margin: 0.625rem auto;
+    background-color: tomato;
+    font-weight: bold;
+    font-size: 100%;
+    display: inline-block;
+    border: none;
+    color: white;
+    padding: .5rem;
+    width: 50%;
+    display: block;
+    cursor: pointer;
+}
+#feedback{
+    color: red;
+    width: 100%;
+    text-align: center;
+    font-size: .7rem;
+    padding: 0;
+    display: none;
+}
+a:hover{
+    box-shadow: -2px 7px 9px 9px rgba(0,0,0,0.35);
+}
+.result h1{
+    padding: 5rem 0 0 0;
+}
+.result{
+    /* padding: 5rem 0 0 0; */
+    display: none;
+    min-height: 100vh;
+    background-color: navy;
+    text-align: center;
+}
+
+.form-input {
+    text-align: center;
+    font-size: 100%;
+    width: 100%;
+    font-family: open sans;
+    font-style: normal;
+}
+
+#zodiacImage {
+	width: 25%;
 }
