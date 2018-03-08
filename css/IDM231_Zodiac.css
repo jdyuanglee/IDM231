@@ -21,9 +21,12 @@ header, main{
     align-items: center;
     display: flex;
     height: 100vh;
-    background-color: navy;
+    background-color: #172242;
 }
+header h2{
+    text-transform: uppercase;
 
+}
 form{
     justify-content: center;
     margin: auto;
@@ -92,7 +95,7 @@ p{
     margin: auto;
 }
 
-a{
+main a{
     text-align: center;
     text-decoration: none;
     margin: 0.625rem auto;
@@ -115,17 +118,18 @@ a{
     padding: 0;
     display: none;
 }
-a:hover{
+main a:hover{
     box-shadow: -2px 7px 9px 9px rgba(0,0,0,0.35);
 }
 .result h1{
+    text-transform: uppercase;
     padding: 5rem 0 0 0;
 }
 .result{
     /* padding: 5rem 0 0 0; */
     display: none;
     min-height: 100vh;
-    background-color: navy;
+    background-color: #172242;
     text-align: center;
 }
 
