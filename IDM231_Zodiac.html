@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>IDM231_Zodiac</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="css/IDM231_Zodiac.css">
     <link rel="stylesheet" href="css/main.css">
@@ -18,32 +18,19 @@
     <header>
         <div class="parent">
             <div class="child">
-                <h2><b>Welcome</b></h2>
-                <a href="#myForm"><span class="continue">&#8249;</span></a>
+                <h2>
+                    <b>Welcome</b>
+                </h2>
+                <a href="#myForm">
+                    <span class="continue">&#8249;</span>
+                </a>
             </div>
         </div>
         <div class="copyright"></div>
     </header>
 
-    <!-- <section>
-        <form action="index.html" method="post" id="myForm" name="myForm">
-            <div class="control">
-                <label for="name"> NAME </label>
-                <input type="text" id="name" name="name" placeholder="Yuang Li" required>
-            </div>
-            <div class="control">
-                <label for="date">DOB</label>
-                <input type="date" id="date" name="date" required>
-                <p class="feedback" hidden>Please enter a vaild date.</p>
-            </div>
-            <div class="control">
-                <input type="submit" value="submit">
-            </div>
-        </form>
-    </section> -->
-
     <main>
-        <form action="index.html" method="post" id="myForm" name="myForm">
+        <!-- <form action="index.html" method="post" id="myForm" name="myForm">
             <div class="formS">
                 <label for="date">DOB</label>
                 <input type="date" id="date" name="date" required>
@@ -56,20 +43,114 @@
             <div class="formS">
                 <input id="your-sign" class="form-input" placeholder="ex: Leo"></input>
             </div>
-            <!-- <div class="formS">
-                <label for="date">DOB</label>
-                <input type="date" id="date" name="date" required>
-            </div> -->
             <div class="formS">
                 <input type="submit" value="Submit">
                 <a href="#hidden" type="button" onclick="astSign()">Click me</a>
             </div>
-        </form>
+        </form> -->
         <div class="help">
             <img src="resources/questionmark.png" alt="?">
         </div>
-    </main>
+        <section>
+            <div class="zodiac" id="ari">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="" y2="200" />
+                </svg>
+                <img src="resources/ariesSign.png" alt="ari">
 
+            </div>
+            <div class="zodiac" id="tau">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/taurusSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="gem">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/geminiSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="can">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/cancerSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="leo">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/leoSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="vir">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/virgoSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="lib">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+                <img src="resources/libraSign.png" alt="ari">
+                <p>lib</p>
+            </div>
+            <div class="zodiac" id="sco">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/scorpioSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="sag">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/saggitariusSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="cap">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/capricornSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="aqu">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/aquariusSign.png" alt="ari">
+            </div>
+            <div class="zodiac" id="pis">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <img src="resources/piscesSign.png" alt="ari">
+            </div>
+        </section>
+        <form id="myForm" name="myForm" method="post" action="index.html">
+            <div class="control">
+                <!-- <label>Date</label> -->
+                <input type="date" id="date" name="date" value="02/22/1980" required>
+                <p class="feedback" hidden>
+                    Please enter a valid date mm/dd/yyyy.
+                </p>
+            </div>
+            <div class="control">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+    </main>
 
 
     <div class="analog">

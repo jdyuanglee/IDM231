@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    display: block;
 }
 
 img{
@@ -33,20 +32,116 @@ header h2{
     text-transform: uppercase;
 
 }
-form{
-    justify-content: center;
-    margin: auto;
+
+main{
+    justify-content: space-between;
 }
 
 .help{
+    padding: 1rem;
     width: 3rem;
     align-self: flex-end;
     filter: invert(1);
     cursor: pointer;
+}.help:hover{
+    
 }
 
-.help:hover{
-    
+.zodiac{
+    margin: -3rem 0rem;
+    width: 5rem;
+    height: 0rem;
+    display: inline-block;
+    text-align: center;
+}.zodiac p{
+    text-align: center;
+}.zodiac img{
+    width: 5rem;
+}.zodiac img:hover{
+  cursor: pointer;
+  filter: invert(1);
+}line{
+    stroke: #ccc; 
+    stroke-width: 7;
+}
+#ari{
+    position: absolute;
+    transform: rotate(0deg);
+}#tau{
+    position: absolute;
+    transform: rotate(30deg);
+}#gem{
+    position: absolute;
+    transform: rotate(60deg);
+}#can{
+    position: absolute;
+    transform: rotate(90deg);
+}#leo{
+    position: absolute;
+    transform: rotate(120deg);
+}#vir{
+    position: absolute;
+    transform: rotate(150deg);
+}#lib{
+    position: absolute;
+    transform: rotate(180deg);
+}#sco{
+    position: absolute;
+    transform: rotate(210deg);
+}#sag{
+    position: absolute;
+    transform: rotate(240deg);
+}#cap{
+    position: absolute;
+    transform: rotate(270deg);
+}#aqu{
+    position: absolute;
+    transform: rotate(300deg);
+}#pis{
+    position: absolute;
+    transform: rotate(330deg);
+}
+
+form{
+    padding: 1rem;
+    align-self: flex-end;
+}
+label{
+    color: white;
+}
+.control{
+    padding:.5rem;
+}
+input[type="date"]{
+  width: 10rem;
+  height: 1.25rem;
+}
+
+input[type="submit"] {
+  width: 8.125rem;
+  height: 3rem;
+  display: block;
+  border: 0;
+  background-color: lightgray;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+  background-color: #bbb;
+  cursor: pointer;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.feedback {
+  color: darkred;
+  font-size: 0.88rem;
 }
 
 .continue{
@@ -67,19 +162,13 @@ form{
 
 button{
     font-size: 2rem;
-}
-
-/* 下一个 */
-
-form{
-    margin: auto;
-
-}
-
+} 
 .formS {
 	width: 50%;
     margin: auto;
 }
+
+/* Result page */
 
 h1 {
     padding: 1rem;
