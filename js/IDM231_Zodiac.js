@@ -153,7 +153,6 @@ function astSign() {
         // Once we have a valid date, what can we do?
     }
 
-    
     var userInput = document.getElementById("your-sign").value.toLowerCase();
     var sign = document.getElementById("yourSign");
     var range = document.getElementById("birthdayRange");
