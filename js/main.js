@@ -78,27 +78,17 @@ var zodiac = [
   const form = document.forms['myForm'];
   console.log(myForm);
 
+
+
+
   function handleFormSubmit(event) {
-    // Prevent the form submission from refreshing the page.
     event.preventDefault();
 
     const inputDate = document.getElementById('date');
     const myDate = new Date(inputDate.value);
 
-    // console.log('Form submitted', event);
-    // console.log(`myDate: ${myDate}`);
-    // console.log(`getDate: ${myDate.getDate()}`);
-    /**
-     * Notice the day value is off by one.
-     * This occurs because we're taking a UTC date
-     * and converting it to our timezone which is 5
-     * hours behind. We need the date when not adjusting
-     * for timezone.
-     */
-
     var whichMonth = myDate.getUTCMonth() + 1;
     var whichDayOfMonth = myDate.getUTCDate();
-    // var AstroSign;
 
     if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
       AstroSign = "Cap";
@@ -151,7 +141,6 @@ var zodiac = [
       }
     }
 
-    // What happens when the input date is invalid?
     const feedbackDate = inputDate.nextElementSibling;
     if (isNaN(myDate)) {
       inputDate.focus();
@@ -160,12 +149,126 @@ var zodiac = [
     } else {
       feedbackDate.hidden = true;
     }
-
-    // Once we have a valid date, what can we do?
   }
+  // function checkInputValue{
+
+  // }
+
+
+
 
   form.addEventListener('submit', handleFormSubmit, false);
   form.addEventListener('change', handleFormSubmit, false);
+
+
+  
+  var sign = document.getElementById("yourSign");
+  var range = document.getElementById("birthdayRange");
+  var attributes = document.getElementById("attributes");
+  var img = document.getElementById("zodiacImage");
+
+  // document.getElementsByClassName('zodiac').onclick = function () {
+
+  //   for (var i = 0; i < zodiac.length; i++) {
+  //     var c = document.getElementById(zodiac[i].zodiacName.substring(0, 3));
+  //     console.log(zodiac[i].zodiacName.substring(0, 3));
+  //     c.onclick = function () {
+  //       document.getElementById("hidden").style.display = "block";
+  //       sign.innerHTML = zodiac[i].zodiacName;
+  //       range.innerHTML = zodiac[i].birthdayRange;
+  //       attributes.innerHTML = zodiac[i].attributes;
+  //       img.src = zodiac[i].picture;
+  //     }
+  //   }
+  // }
+
+  var ari = document.getElementById('ari');
+  var can = document.getElementById('can');
+  var tau = document.getElementById('tau');
+  var gem = document.getElementById('gem');
+  var cap = document.getElementById('cap');
+  var sag = document.getElementById('sag');
+  var pis = document.getElementById('pis');
+  var aqa = document.getElementById('aqa');
+  var sco = document.getElementById('sco');
+  var vir = document.getElementById('vir');
+  var lib = document.getElementById('lib');
+  var leo = document.getElementById('leo');
+
+  ari.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[0].zodiacName;
+    range.innerHTML = zodiac[0].birthdayRange;
+    attributes.innerHTML = zodiac[0].attributes;
+    img.src = zodiac[0].picture;
+  }; can.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[1].zodiacName;
+    range.innerHTML = zodiac[1].birthdayRange;
+    attributes.innerHTML = zodiac[1].attributes;
+    img.src = zodiac[1].picture;
+  }; tau.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[2].zodiacName;
+    range.innerHTML = zodiac[2].birthdayRange;
+    attributes.innerHTML = zodiac[2].attributes;
+    img.src = zodiac[2].picture;
+  }; gem.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[3].zodiacName;
+    range.innerHTML = zodiac[3].birthdayRange;
+    attributes.innerHTML = zodiac[3].attributes;
+    img.src = zodiac[3].picture;
+  }; cap.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[4].zodiacName;
+    range.innerHTML = zodiac[4].birthdayRange;
+    attributes.innerHTML = zodiac[4].attributes;
+    img.src = zodiac[4].picture;
+  }; sag.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[5].zodiacName;
+    range.innerHTML = zodiac[5].birthdayRange;
+    attributes.innerHTML = zodiac[5].attributes;
+    img.src = zodiac[5].picture;
+  }; pis.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[6].zodiacName;
+    range.innerHTML = zodiac[6].birthdayRange;
+    attributes.innerHTML = zodiac[6].attributes;
+    img.src = zodiac[6].picture;
+  }; aqa.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[7].zodiacName;
+    range.innerHTML = zodiac[7].birthdayRange;
+    attributes.innerHTML = zodiac[7].attributes;
+    img.src = zodiac[7].picture;
+  }; sco.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[8].zodiacName;
+    range.innerHTML = zodiac[8].birthdayRange;
+    attributes.innerHTML = zodiac[8].attributes;
+    img.src = zodiac[8].picture;
+  }; vir.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[9].zodiacName;
+    range.innerHTML = zodiac[9].birthdayRange;
+    attributes.innerHTML = zodiac[9].attributes;
+    img.src = zodiac[9].picture;
+  }; lib.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[10].zodiacName;
+    range.innerHTML = zodiac[10].birthdayRange;
+    attributes.innerHTML = zodiac[10].attributes;
+    img.src = zodiac[10].picture;
+  }; leo.onclick = function () {
+    document.getElementById("hidden").style.display = "block";
+    sign.innerHTML = zodiac[11].zodiacName;
+    range.innerHTML = zodiac[11].birthdayRange;
+    attributes.innerHTML = zodiac[11].attributes;
+    img.src = zodiac[11].picture;
+  };
+
 }
 
 
