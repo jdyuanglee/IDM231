@@ -10,6 +10,32 @@
 //     }
 // }
 
+if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
+    AstroSign = "Cap";
+} else if ((whichMonth == 11 && whichDayOfMonth >= 22) || (whichMonth == 12 && whichDayOfMonth <= 21)) {
+    AstroSign = "Sag";
+} else if ((whichMonth == 10 && whichDayOfMonth >= 24) || (whichMonth == 11 && whichDayOfMonth <= 21)) {
+    AstroSign = "Sco";
+} else if ((whichMonth == 9 && whichDayOfMonth >= 23) || (whichMonth == 10 && whichDayOfMonth <= 23)) {
+    AstroSign = "Lib";
+} else if ((whichMonth == 8 && whichDayOfMonth >= 23) || (whichMonth == 9 && whichDayOfMonth <= 22)) {
+    AstroSign = "Vir";
+} else if ((whichMonth == 7 && whichDayOfMonth >= 23) || (whichMonth == 8 && whichDayOfMonth <= 22)) {
+    AstroSign = "Leo";
+} else if ((whichMonth == 6 && whichDayOfMonth >= 22) || (whichMonth == 7 && whichDayOfMonth <= 22)) {
+    AstroSign = "Can";
+} else if ((whichMonth == 5 && whichDayOfMonth >= 21) || (whichMonth == 6 && whichDayOfMonth <= 21)) {
+    AstroSign = "Gem";
+} else if ((whichMonth == 4 && whichDayOfMonth >= 20) || (whichMonth == 5 && whichDayOfMonth <= 20)) {
+    AstroSign = "Tau";
+} else if ((whichMonth == 3 && whichDayOfMonth >= 21) || (whichMonth == 4 && whichDayOfMonth <= 19)) {
+    AstroSign = "Ari";
+} else if ((whichMonth == 2 && whichDayOfMonth >= 19) || (whichMonth == 3 && whichDayOfMonth <= 20)) {
+    AstroSign = "Pis";
+} else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
+    AstroSign = "Aqu";
+}
+
 console.log("Loading...");
 
 var zodiac = [
@@ -90,6 +116,44 @@ var zodiac = [
 function astSign() {
     console.log("Working")
 
+
+    function handleFormSubmit(event) {
+        // Prevent the form submission from refreshing the page.
+        event.preventDefault();
+
+        const inputDate = document.getElementById('date');
+        const myDate = new Date(inputDate.value);
+
+        console.log('Form submitted', event);
+        console.group('Selected Date Information');
+        console.log(`myDate: ${myDate}`);
+        console.log(`getDate: ${myDate.getDate()}`);
+        /**
+         * Notice the day value is off by one.
+         * This occurs because we're taking a UTC date
+         * and converting it to our timezone which is 5
+         * hours behind. We need the date when not adjusting
+         * for timezone.
+         */
+        console.log(`Month: ${myDate.getUTCMonth()}`);
+        console.log(`Date: ${myDate.getUTCDate()}`);
+        console.log(`Year: ${myDate.getUTCFullYear()}`);
+        console.groupEnd();
+
+        // What happens when the input date is invalid?
+        const feedbackDate = inputDate.nextElementSibling;
+        if (isNaN(myDate)) {
+            inputDate.focus();
+            inputDate.value = '';
+            feedbackDate.hidden = false;
+        } else {
+            feedbackDate.hidden = true;
+        }
+
+        // Once we have a valid date, what can we do?
+    }
+
+    
     var userInput = document.getElementById("your-sign").value.toLowerCase();
     var sign = document.getElementById("yourSign");
     var range = document.getElementById("birthdayRange");

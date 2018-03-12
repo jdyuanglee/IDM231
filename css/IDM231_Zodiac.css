@@ -9,6 +9,12 @@ img{
     width: 100%;
 }
 
+input[type="submit"]{
+    width: 8rem;
+    height: 2rem;
+    background-color: red;
+}
+
 html{
     font-size: 100%;
 }
