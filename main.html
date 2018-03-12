@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IDM231_Zodiac</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="css/IDM231_Zodiac.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <main>
+        <!-- <form action="index.html" method="post" id="myForm" name="myForm">
+            <div class="formS">
+                <label for="date">DOB</label>
+                <input type="date" id="date" name="date" required>
+                <p class="feedback" hidden>Please enter a vaild date.</p>
+            </div>
+            <div class="formS">
+                <h1>What's Your Zodiac</h1>
+                <p id="feedback">Please enter a vaild value.</p>
+            </div>
+            <div class="formS">
+                <input id="your-sign" class="form-input" placeholder="ex: Leo"></input>
+            </div>
+            <div class="formS">
+                <input type="submit" value="Submit">
+                <a href="#hidden" type="button" onclick="astSign()">Click me</a>
+            </div>
+        </form> -->
+        <div class="help">
+            <img src="resources/questionmark.png" alt="?">
+        </div>
+
+        <section>
+            <div class="zodiac" id="ari" name="a">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/ariesSign.png" alt="ari">
+                </a>
+
+            </div>
+            <div class="zodiac" id="tau" name="a">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/taurusSign.png" alt="tau">
+                </a>
+            </div>
+            <div class="zodiac" id="gem">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/geminiSign.png" alt="gem">
+                </a>
+            </div>
+            <div class="zodiac" id="can">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/cancerSign.png" alt="can">
+                </a>
+            </div>
+            <div class="zodiac" id="leo">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/leoSign.png" alt="leo">
+                </a>
+            </div>
+            <div class="zodiac" id="vir">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/virgoSign.png" alt="vir">
+                </a>
+            </div>
+            <div class="zodiac" id="lib">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+                <a href="#">
+                    <img src="resources/libraSign.png" alt="lib">
+                </a>
+            </div>
+            <div class="zodiac" id="sco">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/scorpioSign.png" alt="sco">
+                </a>
+            </div>
+            <div class="zodiac" id="sag">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/saggitariusSign.png" alt="sag">
+                </a>
+            </div>
+            <div class="zodiac" id="cap">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/capricornSign.png" alt="cap">
+                </a>
+            </div>
+            <div class="zodiac" id="aqu">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/aquariusSign.png" alt="aqu">
+                </a>
+            </div>
+            <div class="zodiac" id="pis">
+                <svg height="200" width="3">
+                    <line x1="0" y1="0" x2="0" y2="200" />
+                </svg>
+
+                <a href="#">
+                    <img src="resources/piscesSign.png" alt="pis">
+                </a>
+            </div>
+        </section>
+
+        <form id="myForm" name="myForm" method="post" action="index.html">
+            <div class="control">
+                <!-- <label>Date</label> -->
+                <input type="date" id="date" name="date" value="02/22/1980" required>
+                <p class="feedback" hidden>
+                    Please enter a valid date mm/dd/yyyy.
+                </p>
+            </div>
+            <div class="control">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+    </main>
+
+    <div class="result" id="hidden">
+        <h1 id="yourSign"></h1>
+        <h2 id="birthdayRange"></h2>
+        <p id="attributes"></p>
+        <img id="zodiacImage">
+    </div>
+
+
+    <script src="js/main.js"></script>
+    <!-- <script src="IDM231_Zodiac.js"></script> -->
+</body>
+
+</html>
+
+<!-- 
+    1. fix continue icon
+    2. fix bg image
+    3. add click function 
+    4. add question icon hover
+    5. add a box showing which zodiac u are hovering
+    6. refresh form div
+    7. add restart icon
+    8. make them page to page not page by page
+ -->
