@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="css/IDM231_Zodiac.css">
     <link rel="stylesheet" href="css/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
@@ -21,7 +18,7 @@
                 <h2>
                     <b>Welcome</b>
                 </h2>
-                <a href="#myForm">
+                <a href="#ari">
                     <span class="continue">&#8249;</span>
                 </a>
             </div>
@@ -49,14 +46,16 @@
             </div>
         </form> -->
         <div class="help">
+            <p>What is Zodiac?</p>
             <img src="resources/questionmark.png" alt="?">
         </div>
+
         <section>
             <div class="zodiac" id="ari">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="" y2="200" />
                 </svg>
-                <img src="resources/ariesSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/ariesSign.png" alt="ari"></a>
 
             </div>
             <div class="zodiac" id="tau">
@@ -64,95 +63,97 @@
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/taurusSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/taurusSign.png" alt="tau"></a>
             </div>
             <div class="zodiac" id="gem">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/geminiSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/geminiSign.png" alt="gem"></a>
             </div>
             <div class="zodiac" id="can">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/cancerSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/cancerSign.png" alt="can"></a>
             </div>
             <div class="zodiac" id="leo">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/leoSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/leoSign.png" alt="leo"></a>
             </div>
             <div class="zodiac" id="vir">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/virgoSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/virgoSign.png" alt="vir"></a>
             </div>
             <div class="zodiac" id="lib">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
-                <img src="resources/libraSign.png" alt="ari">
-                <p>lib</p>
+                <a href="#hidden"><img src="resources/libraSign.png" alt="lib"></a>
             </div>
             <div class="zodiac" id="sco">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/scorpioSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/scorpioSign.png" alt="sco"></a>
             </div>
             <div class="zodiac" id="sag">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/saggitariusSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/saggitariusSign.png" alt="sag"></a>
             </div>
             <div class="zodiac" id="cap">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/capricornSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/capricornSign.png" alt="cap"></a>
             </div>
             <div class="zodiac" id="aqu">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/aquariusSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/aquariusSign.png" alt="aqu"></a>
             </div>
             <div class="zodiac" id="pis">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <img src="resources/piscesSign.png" alt="ari">
+                <a href="#hidden"><img src="resources/piscesSign.png" alt="pis"></a>
             </div>
         </section>
-        <form id="myForm" name="myForm" method="post" action="index.html">
+
+        <form id="myForm" name="myForm" method="post" action="IDM231_Zodiac.html">
+            <p>I don't know my Zodiac</p>
             <div class="control">
                 <!-- <label>Date</label> -->
                 <input type="date" id="date" name="date" value="02/22/1980" required>
-                <p class="feedback" hidden>
+                <p id="feedback">
                     Please enter a valid date mm/dd/yyyy.
                 </p>
             </div>
             <div class="control">
                 <input type="submit" value="Submit">
+                <!-- <a href="#hidden" input type="submit" value="Submit">Submit</a> -->
             </div>
         </form>
 
     </main>
 
-
+<footer>
     <div class="analog">
 
     </div>
@@ -163,6 +164,7 @@
         <p id="attributes"></p>
         <img id="zodiacImage">
     </div>
+</footer>
 
     <script src="js/main.js"></script>
     <!-- <script src="IDM231_Zodiac.js"></script> -->

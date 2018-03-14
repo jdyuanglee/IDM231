@@ -73,15 +73,47 @@ var zodiac = [
   }
 ]
 
+var feedback = document.getElementById('feedback');
+var inputDate_el = document.getElementById('date');
+
+function checkInputValue() {
+  const inputDate = new Date(inputDate_el.value);
+  console.log(inputDate);
+  var month = inputDate.getUTCMonth() + 1;
+  var day = inputDate.getUTCDate();
+
+  console.log(month);
+  console.log(day);
+
+  if (month == 2) {
+    if (day > 29) {
+      feedback.hidden = false;
+    } else {
+      feedback.hidden = true;
+    }
+  } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+    if (day > 29) {
+      feedback.hidden = false;
+    } else {
+      feedback.hidden = true;
+    }
+  } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+    if (day > 30) {
+      feedback.hidden = false;
+    } else {
+      feedback.hidden = true;
+    }
+  }
+}
+// date.addEventListener('blur', checkInputValue, false);
+
 {
   // const form = document.getElementById('myForm');
   const form = document.forms['myForm'];
   console.log(myForm);
 
 
-
-
-  function handleFormSubmit(event) {
+  function handleFormSubmit(event) { 
     event.preventDefault();
 
     const inputDate = document.getElementById('date');
@@ -150,18 +182,13 @@ var zodiac = [
       feedbackDate.hidden = true;
     }
   }
-  // function checkInputValue{
-
-  // }
-
-
 
 
   form.addEventListener('submit', handleFormSubmit, false);
   form.addEventListener('change', handleFormSubmit, false);
 
 
-  
+
   var sign = document.getElementById("yourSign");
   var range = document.getElementById("birthdayRange");
   var attributes = document.getElementById("attributes");
@@ -189,7 +216,7 @@ var zodiac = [
   var cap = document.getElementById('cap');
   var sag = document.getElementById('sag');
   var pis = document.getElementById('pis');
-  var aqa = document.getElementById('aqa');
+  var aqu = document.getElementById('aqu');
   var sco = document.getElementById('sco');
   var vir = document.getElementById('vir');
   var lib = document.getElementById('lib');
@@ -237,7 +264,7 @@ var zodiac = [
     range.innerHTML = zodiac[6].birthdayRange;
     attributes.innerHTML = zodiac[6].attributes;
     img.src = zodiac[6].picture;
-  }; aqa.onclick = function () {
+  }; aqu.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[7].zodiacName;
     range.innerHTML = zodiac[7].birthdayRange;
