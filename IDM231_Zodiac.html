@@ -6,46 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IDM231_Zodiac</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"> -->
     <link rel="stylesheet" href="css/IDM231_Zodiac.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="parent">
             <div class="child">
                 <h2>
                     <b>Welcome</b>
                 </h2>
-                <a href="#ari">
-                    <span class="continue">&#8249;</span>
+                <a href="#ari" id="continue">
+                    <img src="resources/next.png" alt="next">
                 </a>
             </div>
         </div>
         <div class="copyright"></div>
     </header>
 
-    <main>
-        <!-- <form action="index.html" method="post" id="myForm" name="myForm">
-            <div class="formS">
-                <label for="date">DOB</label>
-                <input type="date" id="date" name="date" required>
-                <p class="feedback" hidden>Please enter a vaild date.</p>
-            </div>
-            <div class="formS">
-                <h1>What's Your Zodiac</h1>
-                <p id="feedback">Please enter a vaild value.</p>
-            </div>
-            <div class="formS">
-                <input id="your-sign" class="form-input" placeholder="ex: Leo"></input>
-            </div>
-            <div class="formS">
-                <input type="submit" value="Submit">
-                <a href="#hidden" type="button" onclick="astSign()">Click me</a>
-            </div>
-        </form> -->
+    <main id="main">
         <div class="help">
+            <div class="inst">
+                <p>The zodiac is an area of the sky that extends approximately 8° north or south (as measured in celestial latitude)
+                    of the ecliptic, the apparent path of the Sun across the celestial sphere over the course of the year.
+                    The paths of the Moon and visible planets are also within the belt of the zodiac.
+                    <br>
+                    <br>In Western astrology, and formerly astronomy, the zodiac is divided into twelve signs, each occupying
+                    30° of celestial longitude and roughly corresponding to the constellations Aries, Taurus, Gemini, Cancer,
+                    Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius and Pisces.
+                    <br>
+                    <br>The twelve astrological signs form a celestial coordinate system, or more specifically an ecliptic coordinate
+                    system, which takes the ecliptic as the origin of latitude and the Sun's position at vernal equinox as
+                    the origin of longitude.</p>
+            </div>
             <p>What is Zodiac?</p>
             <img src="resources/questionmark.png" alt="?">
         </div>
@@ -55,7 +50,9 @@
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="" y2="200" />
                 </svg>
-                <a href="#hidden"><img src="resources/ariesSign.png" alt="ari"></a>
+                <a href="#hidden">
+                    <img src="resources/ariesSign.png" alt="ari">
+                </a>
 
             </div>
             <div class="zodiac" id="tau">
@@ -63,76 +60,98 @@
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/taurusSign.png" alt="tau"></a>
+                <a href="#hidden">
+                    <img src="resources/taurusSign.png" alt="tau">
+                </a>
             </div>
             <div class="zodiac" id="gem">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/geminiSign.png" alt="gem"></a>
+                <a href="#hidden">
+                    <img src="resources/geminiSign.png" alt="gem">
+                </a>
             </div>
             <div class="zodiac" id="can">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/cancerSign.png" alt="can"></a>
+                <a href="#hidden">
+                    <img src="resources/cancerSign.png" alt="can">
+                </a>
             </div>
             <div class="zodiac" id="leo">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/leoSign.png" alt="leo"></a>
+                <a href="#hidden">
+                    <img src="resources/leoSign.png" alt="leo">
+                </a>
             </div>
             <div class="zodiac" id="vir">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/virgoSign.png" alt="vir"></a>
+                <a href="#hidden">
+                    <img src="resources/virgoSign.png" alt="vir">
+                </a>
             </div>
             <div class="zodiac" id="lib">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
-                <a href="#hidden"><img src="resources/libraSign.png" alt="lib"></a>
+                <a href="#hidden">
+                    <img src="resources/libraSign.png" alt="lib">
+                </a>
             </div>
             <div class="zodiac" id="sco">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/scorpioSign.png" alt="sco"></a>
+                <a href="#hidden">
+                    <img src="resources/scorpioSign.png" alt="sco">
+                </a>
             </div>
             <div class="zodiac" id="sag">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/saggitariusSign.png" alt="sag"></a>
+                <a href="#hidden">
+                    <img src="resources/saggitariusSign.png" alt="sag">
+                </a>
             </div>
             <div class="zodiac" id="cap">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/capricornSign.png" alt="cap"></a>
+                <a href="#hidden">
+                    <img src="resources/capricornSign.png" alt="cap">
+                </a>
             </div>
             <div class="zodiac" id="aqu">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/aquariusSign.png" alt="aqu"></a>
+                <a href="#hidden">
+                    <img src="resources/aquariusSign.png" alt="aqu">
+                </a>
             </div>
             <div class="zodiac" id="pis">
                 <svg height="200" width="3">
                     <line x1="0" y1="0" x2="0" y2="200" />
                 </svg>
 
-                <a href="#hidden"><img src="resources/piscesSign.png" alt="pis"></a>
+                <a href="#hidden">
+                    <img src="resources/piscesSign.png" alt="pis">
+                </a>
             </div>
         </section>
 
@@ -146,25 +165,21 @@
                 </p>
             </div>
             <div class="control">
-                <input type="submit" value="Submit">
+                <input type="submit" id="submit" value="Submit">
                 <!-- <a href="#hidden" input type="submit" value="Submit">Submit</a> -->
             </div>
         </form>
 
     </main>
 
-<footer>
-    <div class="analog">
-
-    </div>
-
-    <div class="result" id="hidden">
-        <h1 id="yourSign"></h1>
-        <h2 id="birthdayRange"></h2>
-        <p id="attributes"></p>
-        <img id="zodiacImage">
-    </div>
-</footer>
+    <footer>
+        <div class="result" id="hidden">
+            <h1 id="yourSign"></h1>
+            <h2 id="birthdayRange"></h2>
+            <p id="attributes"></p>
+            <img id="zodiacImage">
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
     <!-- <script src="IDM231_Zodiac.js"></script> -->

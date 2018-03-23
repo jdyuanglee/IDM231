@@ -1,3 +1,7 @@
+var sign = document.getElementById("yourSign");
+var range = document.getElementById("birthdayRange");
+var attributes = document.getElementById("attributes");
+var img = document.getElementById("zodiacImage");
 var zodiac = [
   {
     zodiacName: "aries",
@@ -72,7 +76,6 @@ var zodiac = [
     picture: "resources/leoSign.png"
   }
 ]
-
 var feedback = document.getElementById('feedback');
 var inputDate_el = document.getElementById('date');
 
@@ -85,6 +88,31 @@ function checkInputValue() {
   console.log(month);
   console.log(day);
 
+  // if (month == 2) {
+  //   if (day > 29) {
+  //     feedback_el.textContent = 'Username must be at least 5 characters.';
+  //     feedback_el.classList.add('danger');
+  //   } else {
+  //     feedback_el.textContent = '';
+  //     feedback_el.classList.remove('danger');
+  //   }
+  // } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+  //   if (day > 29) {
+  //     feedback_el.textContent = 'Username must be at least 5 characters.';
+  //     feedback_el.classList.add('danger');
+  //   } else {
+  //     feedback_el.textContent = '';
+  //     feedback_el.classList.remove('danger');
+  //   }
+  // } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+  //   if (day > 30) {
+  //     feedback_el.textContent = 'Username must be at least 5 characters.';
+  //     feedback_el.classList.add('danger');
+  //   } else {
+  //     feedback_el.textContent = '';
+  //     feedback_el.classList.remove('danger');
+  //   }
+  // }
   if (month == 2) {
     if (day > 29) {
       feedback.hidden = false;
@@ -105,110 +133,82 @@ function checkInputValue() {
     }
   }
 }
-// date.addEventListener('blur', checkInputValue, false);
 
-{
-  // const form = document.getElementById('myForm');
-  const form = document.forms['myForm'];
-  console.log(myForm);
+// const form = document.getElementById('myForm');
+const form = document.forms['myForm'];
+console.log(myForm);
 
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-  function handleFormSubmit(event) { 
-    event.preventDefault();
+  const inputDate = document.getElementById('date');
+  const myDate = new Date(inputDate.value);
 
-    const inputDate = document.getElementById('date');
-    const myDate = new Date(inputDate.value);
+  var whichMonth = myDate.getUTCMonth() + 1;
+  var whichDayOfMonth = myDate.getUTCDate();
 
-    var whichMonth = myDate.getUTCMonth() + 1;
-    var whichDayOfMonth = myDate.getUTCDate();
-
-    if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
-      AstroSign = "Cap";
-    } else if ((whichMonth == 11 && whichDayOfMonth >= 22) || (whichMonth == 12 && whichDayOfMonth <= 21)) {
-      AstroSign = "Sag";
-    } else if ((whichMonth == 10 && whichDayOfMonth >= 24) || (whichMonth == 11 && whichDayOfMonth <= 21)) {
-      AstroSign = "Sco";
-    } else if ((whichMonth == 9 && whichDayOfMonth >= 23) || (whichMonth == 10 && whichDayOfMonth <= 23)) {
-      AstroSign = "Lib";
-    } else if ((whichMonth == 8 && whichDayOfMonth >= 23) || (whichMonth == 9 && whichDayOfMonth <= 22)) {
-      AstroSign = "Vir";
-    } else if ((whichMonth == 7 && whichDayOfMonth >= 23) || (whichMonth == 8 && whichDayOfMonth <= 22)) {
-      AstroSign = "Leo";
-    } else if ((whichMonth == 6 && whichDayOfMonth >= 22) || (whichMonth == 7 && whichDayOfMonth <= 22)) {
-      AstroSign = "Can";
-    } else if ((whichMonth == 5 && whichDayOfMonth >= 21) || (whichMonth == 6 && whichDayOfMonth <= 21)) {
-      AstroSign = "Gem";
-    } else if ((whichMonth == 4 && whichDayOfMonth >= 20) || (whichMonth == 5 && whichDayOfMonth <= 20)) {
-      AstroSign = "Tau";
-    } else if ((whichMonth == 3 && whichDayOfMonth >= 21) || (whichMonth == 4 && whichDayOfMonth <= 19)) {
-      AstroSign = "Ari";
-    } else if ((whichMonth == 2 && whichDayOfMonth >= 19) || (whichMonth == 3 && whichDayOfMonth <= 20)) {
-      AstroSign = "Pis";
-    } else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
-      AstroSign = "Aqu";
-    }
-    console.log(whichMonth);
-    console.log(whichDayOfMonth);
-    console.log(AstroSign);
-    console.log(userInput);
-
-    var userInput = AstroSign.toLowerCase();
-    var sign = document.getElementById("yourSign");
-    var range = document.getElementById("birthdayRange");
-    var attributes = document.getElementById("attributes");
-    var img = document.getElementById("zodiacImage");
-
-    for (var i = 0; i < zodiac.length; i++) {
-      if (userInput == zodiac[i].zodiacName.substring(0, 3)) {
-
-        document.getElementById("hidden").style.display = "block";
-        sign.innerHTML = zodiac[i].zodiacName;
-        range.innerHTML = zodiac[i].birthdayRange;
-        attributes.innerHTML = zodiac[i].attributes;
-        img.src = zodiac[i].picture;
-
-        console.log('worked');
-        console.log(zodiac[i].zodiacName);
-        console.log(zodiac[i].attributes);
-      }
-    }
-
-    const feedbackDate = inputDate.nextElementSibling;
-    if (isNaN(myDate)) {
-      inputDate.focus();
-      inputDate.value = '';
-      feedbackDate.hidden = false;
-    } else {
-      feedbackDate.hidden = true;
-    }
+  if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
+    AstroSign = "Cap";
+  } else if ((whichMonth == 11 && whichDayOfMonth >= 22) || (whichMonth == 12 && whichDayOfMonth <= 21)) {
+    AstroSign = "Sag";
+  } else if ((whichMonth == 10 && whichDayOfMonth >= 24) || (whichMonth == 11 && whichDayOfMonth <= 21)) {
+    AstroSign = "Sco";
+  } else if ((whichMonth == 9 && whichDayOfMonth >= 23) || (whichMonth == 10 && whichDayOfMonth <= 23)) {
+    AstroSign = "Lib";
+  } else if ((whichMonth == 8 && whichDayOfMonth >= 23) || (whichMonth == 9 && whichDayOfMonth <= 22)) {
+    AstroSign = "Vir";
+  } else if ((whichMonth == 7 && whichDayOfMonth >= 23) || (whichMonth == 8 && whichDayOfMonth <= 22)) {
+    AstroSign = "Leo";
+  } else if ((whichMonth == 6 && whichDayOfMonth >= 22) || (whichMonth == 7 && whichDayOfMonth <= 22)) {
+    AstroSign = "Can";
+  } else if ((whichMonth == 5 && whichDayOfMonth >= 21) || (whichMonth == 6 && whichDayOfMonth <= 21)) {
+    AstroSign = "Gem";
+  } else if ((whichMonth == 4 && whichDayOfMonth >= 20) || (whichMonth == 5 && whichDayOfMonth <= 20)) {
+    AstroSign = "Tau";
+  } else if ((whichMonth == 3 && whichDayOfMonth >= 21) || (whichMonth == 4 && whichDayOfMonth <= 19)) {
+    AstroSign = "Ari";
+  } else if ((whichMonth == 2 && whichDayOfMonth >= 19) || (whichMonth == 3 && whichDayOfMonth <= 20)) {
+    AstroSign = "Pis";
+  } else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
+    AstroSign = "Aqu";
   }
+  console.log(whichMonth);
+  console.log(whichDayOfMonth);
+  console.log(AstroSign);
+  console.log(userInput);
 
-
-  form.addEventListener('submit', handleFormSubmit, false);
-  form.addEventListener('change', handleFormSubmit, false);
-
-
-
+  var userInput = AstroSign.toLowerCase();
   var sign = document.getElementById("yourSign");
   var range = document.getElementById("birthdayRange");
   var attributes = document.getElementById("attributes");
   var img = document.getElementById("zodiacImage");
 
-  // document.getElementsByClassName('zodiac').onclick = function () {
+  for (var i = 0; i < zodiac.length; i++) {
+    if (userInput == zodiac[i].zodiacName.substring(0, 3)) {
 
-  //   for (var i = 0; i < zodiac.length; i++) {
-  //     var c = document.getElementById(zodiac[i].zodiacName.substring(0, 3));
-  //     console.log(zodiac[i].zodiacName.substring(0, 3));
-  //     c.onclick = function () {
-  //       document.getElementById("hidden").style.display = "block";
-  //       sign.innerHTML = zodiac[i].zodiacName;
-  //       range.innerHTML = zodiac[i].birthdayRange;
-  //       attributes.innerHTML = zodiac[i].attributes;
-  //       img.src = zodiac[i].picture;
-  //     }
-  //   }
-  // }
+      document.getElementById("hidden").style.display = "block";
+      sign.innerHTML = zodiac[i].zodiacName;
+      range.innerHTML = zodiac[i].birthdayRange;
+      attributes.innerHTML = zodiac[i].attributes;
+      img.src = zodiac[i].picture;
 
+      console.log('worked');
+      console.log(zodiac[i].zodiacName);
+      console.log(zodiac[i].attributes);
+    }
+  }
+
+  const feedbackDate = inputDate.nextElementSibling;
+  if (isNaN(myDate)) {
+    inputDate.focus();
+    inputDate.value = '';
+    feedbackDate.hidden = false;
+  } else {
+    feedbackDate.hidden = true;
+  }
+}
+
+function SelectYourZodiac() {
   var ari = document.getElementById('ari');
   var can = document.getElementById('can');
   var tau = document.getElementById('tau');
@@ -228,74 +228,125 @@ function checkInputValue() {
     range.innerHTML = zodiac[0].birthdayRange;
     attributes.innerHTML = zodiac[0].attributes;
     img.src = zodiac[0].picture;
+    document.getElementById("header").style.display = "none";
+    document.getElementById("main").style.display = "none";
   }; can.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[1].zodiacName;
     range.innerHTML = zodiac[1].birthdayRange;
     attributes.innerHTML = zodiac[1].attributes;
     img.src = zodiac[1].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; tau.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[2].zodiacName;
     range.innerHTML = zodiac[2].birthdayRange;
     attributes.innerHTML = zodiac[2].attributes;
     img.src = zodiac[2].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; gem.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[3].zodiacName;
     range.innerHTML = zodiac[3].birthdayRange;
     attributes.innerHTML = zodiac[3].attributes;
     img.src = zodiac[3].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; cap.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[4].zodiacName;
     range.innerHTML = zodiac[4].birthdayRange;
     attributes.innerHTML = zodiac[4].attributes;
     img.src = zodiac[4].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; sag.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[5].zodiacName;
     range.innerHTML = zodiac[5].birthdayRange;
     attributes.innerHTML = zodiac[5].attributes;
     img.src = zodiac[5].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; pis.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[6].zodiacName;
     range.innerHTML = zodiac[6].birthdayRange;
     attributes.innerHTML = zodiac[6].attributes;
     img.src = zodiac[6].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; aqu.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[7].zodiacName;
     range.innerHTML = zodiac[7].birthdayRange;
     attributes.innerHTML = zodiac[7].attributes;
     img.src = zodiac[7].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; sco.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[8].zodiacName;
     range.innerHTML = zodiac[8].birthdayRange;
     attributes.innerHTML = zodiac[8].attributes;
     img.src = zodiac[8].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; vir.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[9].zodiacName;
     range.innerHTML = zodiac[9].birthdayRange;
     attributes.innerHTML = zodiac[9].attributes;
     img.src = zodiac[9].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; lib.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[10].zodiacName;
     range.innerHTML = zodiac[10].birthdayRange;
     attributes.innerHTML = zodiac[10].attributes;
     img.src = zodiac[10].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   }; leo.onclick = function () {
     document.getElementById("hidden").style.display = "block";
     sign.innerHTML = zodiac[11].zodiacName;
     range.innerHTML = zodiac[11].birthdayRange;
     attributes.innerHTML = zodiac[11].attributes;
     img.src = zodiac[11].picture;
+      document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
   };
+}
+
+
+feedback.hidden = true;
+
+
+document.getElementById("continue").onclick = function () {
+  date.addEventListener('blur', checkInputValue, false);
+  console.log(feedback.hidden);
+  if (feedback.hidden == true) {
+    document.getElementById("header").style.display = "none";
+    document.getElementById("main").style.display = "flex";
+    form.addEventListener('submit', handleFormSubmit, false);
+  }
+  else{
+    return;
+  }
 
 }
 
+document.getElementById("submit").onclick = function () {
+  document.getElementById("header").style.display = "none";
+  document.getElementById("main").style.display = "none";
+}
+
+
+SelectYourZodiac();
+// date.addEventListener('blur', checkInputValue, false);
+// form.addEventListener('submit', handleFormSubmit, false);
+// form.addEventListener('change', handleFormSubmit, false);
 
