@@ -321,9 +321,12 @@ function SelectYourZodiac() {
   };
 }
 
+function playSounds(num){
+document.getElementById('num').play();
+}
 
 feedback.hidden = true;
-
+playSounds(multiaudio1);
 
 document.getElementById("continue").onclick = function () {
   date.addEventListener('blur', checkInputValue, false);
